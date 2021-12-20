@@ -1,209 +1,151 @@
-/*
-  Some of the following questions will ask you to use
-  arrow function syntax. On the problems that don't,
-  feel free to practice with any syntax.
-*/
+
+// Problem 1
+function helloWorld() {
+  console.log('Hello World!')
+}
+helloWorld()
 
 
-////////////////// PROBLEM 1 ////////////////////
-/*
-  Create a function called helloWorld which simply console logs 'Hello, World!'
-  Call the function.
-*/
+// Problem 2
+const jsNinja = () => {
+  console.log('I am a Javascript ninja!') 
+}
+jsNinja()
 
-//CODE HERE
+// Problem 3
+function printName(name) {
+  console.log(name)
+}
+printName('Alex')
 
+// Problem 4
+function greeting(name) {
+  name.toString()
+  console.log(`Hello ${name}`)
+}
+greeting('Mehdi')
 
-////////////////// PROBLEM 2 ////////////////////
+// Problem 5
+const compareNums = (num1, num2) => {
+  if (num1 > num2) {
+    return num1
+  } else if (num2 > num1) {
+    return num2
+  }
+}
+console.log(compareNums(2, 4))
 
-/*
-    Write an arrow function called 'jsNinja' that returns the string: 'I am a JavaScript ninja!'
-*/
+// Problem 6
+function add(arg1, arg2) {
+  parseInt(arg1, arg2)
+  return arg1 + arg2
+}
+const sum = add(1, 2)
+console.log(sum)
 
-//CODE HERE
-
-
-////////////////// PROBLEM 3 ////////////////////
-/*
-  Create a function called printName which takes in a person's name and console logs it.
-  Ex. If 'Cameron' were passed in as the argument, Cameron would be console logged.
-  Call the function, passing in an argument.
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 4 ////////////////////
-/*
-  Create a function called greeting that
-  accepts name as its only parameter.
-  Convert the name param into a string.
-  greeting should log the string 'Hello, '
-  plus the value of the name parameter.
-  Ex. If Jake were passed in as the argument, the function would log 'Hello, Jake'
-  Make sure to call your function and pass in an argument.
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 5 ////////////////////
-
-/*
-    Write an arrow function called 'compareNums' that takes in 2 parameters, 
-    which will be numbers. 
-    The function should return the bigger number. 
-    If the numbers are the same, just return the number.
-
-    Brownie points if you use a ternary statement (only spend significant time on this if you have wiggle room)
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 6 ////////////////////
-/*
-  Create a function called add that takes in two parameters 
-  Inside, convert the arguments to be numbers (just in case strings get sent in)
-  The add function should RETURN the two parameters added together.
-  Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 7 ////////////////////
-
-/*
-  Which syntax was used to create the function below?
-  Uncomment the answer underneath.
-*/
-
+// Problem 7
 const exclaim = function(str) {
   return str.toUpperCase() + '!!!'
 }
+// expression (This is the syntax used)
 
-// arrow
-// declaration
-// expression
-
-
-
-////////////////// PROBLEM 8 ////////////////////
-
-/*
-  Which syntax was used to create the function below?
-  Uncomment the answer underneath.
-*/
-
+// Problem 8
 const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
+// arrow (This is the syntax used)
 
-// arrow
-// declaration
-// expression
+const exclaimThree = str => `${str.toUpperCase()} !!!`
 
-/*
-  Rewrite exclaimTwo to be a single line.
-  Call your new function exclaimThree
-
-  Brownie points if you use a template string
-*/
-
-
-
-////////////////// PROBLEM 9 ////////////////////
-
-/*
-  Which syntax was used to create the function below?
-  Uncomment the answer underneath.
-*/
-
+// Problem 9
 function exclaimFour(str) {
   return str.toUpperCase() + '!!!'
 }
 
-// arrow
-// declaration
-// expression
+// Problem 10
+function nameCheck(name) {
+
+  if (name === 'Steven') {
+    return `What's up ${name}`
+  } else if (name === 'Bryan') {
+    return `Hey ${name}`
+  } else if (name) {
+    return `Cool name, ${name}`
+  }
+  const nameGreeting = nameCheck('Bryan')
+  console.log(nameGreeting)
+}
+nameCheck()
 
 
-////////////////// PROBLEM 10 ////////////////////
-/*
-  Write a function called nameCheck that takes in a name parameter.
-  nameCheck should check if the name equals 'Steven'. If it does, return 'What is up Steven?'
-  If the name parameter is equal to Bryan, return 'Hey Bryan!'
-  If the name parameter is anything else, return 'Cool name, NAMEPARAM' (with NAMEPARAM being the value of the name parameter being passed in).
-  Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
-*/
+// Problem 11
+function faveColorFinder(color) {
+  faveColorFinder.toString()
 
-//CODE HERE
+  if (color === 'red') {
+    return 'red id a great color';
+  } else if (color === 'green') {
+    return 'green is a solid favorite color';
+  } else if (color === 'black') {
+    return 'so trendy'
+  } else if (color !== 'red' && color !== 'green' && color && 'black') {
+    return 'you need to evaluate your favorite color choice'
+  }
+   
+  const colorRating = faveColorFinder('blue')
+  console.log(colorRating)
+}
 
+faveColorFinder()
 
-////////////////// PROBLEM 11 ////////////////////
-/*
-  Write a function called faveColorFinder that takes in one parameter called color (which will be a string).
-  If the passed in color equals 'red', return 'red is a great color'
-  If the passed in color equals 'green', return 'green is a solid favorite color'
-  If the passed in color equals 'black', return 'so trendy'
-  Otherwise, you should return the string 'you need to evaluate your favorite color choice'
-  Create a variable called 'colorRating' and set it equal to faveColorFinder invoked (called), passing in an argument.
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 12 ////////////////////
+// Problem 12
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
-/*
-  Create a function called printAllNames that takes in a single argument (an array of names).
-  Using a for loop, iterate over that array and console log each name.
-  Call the function, passing in the `namesArr` array (above).
-*/
 
-//CODE HERE
+function printAllNames(arr) {
+  for (let i = 0;  i < arr.length; i++) {
+    console.log(arr[i])
+  }
+}
+printAllNames(namesArr)
 
+// Problem 13
+function thatsOdd(num) {
+  if (num % 2 === 1) {
+    return "That's not odd"
+  } else if (num % 2 === 0) {
+    return "That is odd indeed"
+  }
 
-////////////////// PROBLEM 13 ////////////////////
-/*
-  Create a function called thatsOdd that takes in a single argument (a number).
-  Using conditional logic, if the number is even, return 'That's not odd!'
-  Otherwise, return 'That is odd indeed!'
-  Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, making sure to pass in an argument.
-*/
+  const oddChecker = thatsOdd(1)
+  console.log(oddChecker)
+}
+thatsOdd()
 
-//CODE HERE
+// Problem 14
+function bestMovie(movieTitle) {
+  movieTitle = movieTitle.toString()
+  return `${movieTitle} is the best movie ever`
+}
+console.log((bestMovie('Gatsby')))
 
-
-////////////////// PROBLEM 14 ////////////////////
-
-/*
-    Write a one line arrow function called 'bestMovie' that takes in one parameter,
-    which will be a string of a movie title. 
-    The function should return the string: 'MOVEIEPARAM is the best movie ever!'. 
-    For example, if we passed in 'Sharknado', 
-    we would expect the function to return 'Sharknado is the best movie ever!'
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 15 ////////////////////
+// Problem 15
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
-/* 
-  Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
-  Inside of the bigOrSmall function, create a new array called 'answers'. 
-  Then, loop over the passed in arr parameter, and check to see if the number in the array is GREATER than 100. 
-  If it is, push 'big' as a string to the answers array. 
-  If the number is LESS than or EQUAL to 100, push 'small' as a string to the answers array. 
-  Return the answers array inside of the function to a variable called `arrayEvaluator`.
-*/
 
-//CODE HERE
+function bigOrSmall(array) {
+  const answers = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] >= 100) {
+      answers.push(`${array[i]} is Big`)
+    } else if (array[i] <= 100)
+      answers.push(`${array[i]} is Small`)
+  }
+  const arrayEvaluator = answers
+  console.log(arrayEvaluator)
+}
+bigOrSmall(bigOrSmallArray)
 
 
-////////////////// PROBLEM 16 ////////////////////
+// Problem 16
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
 /*
@@ -211,7 +153,6 @@ let loser = 'Glimmer'
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
-//CODE HERE
 
 
 ////////////////// PROBLEM 17 ////////////////////
