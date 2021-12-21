@@ -156,7 +156,8 @@ function theEliminator(contestants, loser) {
       contestants.splice(i, 1)
     }
   }
-  console.log(contestants) 
+  return contestants
+  // console.log(contestants) 
 }
 
 let updatedContestants = theEliminator(contestants, loser)
