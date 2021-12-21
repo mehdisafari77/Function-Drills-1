@@ -136,8 +136,9 @@ function bigOrSmall(array) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] >= 100) {
       answers.push(`${array[i]} is Big`)
-    } else if (array[i] <= 100)
+    } else if (array[i] <= 100) {
       answers.push(`${array[i]} is Small`)
+    }
   }
   const arrayEvaluator = answers
   console.log(arrayEvaluator)
@@ -148,62 +149,87 @@ bigOrSmall(bigOrSmallArray)
 // Problem 16
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
-/*
-  Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
-  The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
-*/
 
+function theEliminator(contestants, loser) {
+  for (let i = 0; i < contestants.length; i++) {
+    if (contestants[i] === loser) {
+      contestants.splice(i, 1)
+    }
+  }
+  console.log(contestants) 
+}
 
+let updatedContestants = theEliminator(contestants, loser)
 
-////////////////// PROBLEM 17 ////////////////////
+// Problem 17
 let sampleString = "Hi, my name is Kylo."
-/*
-  Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
-  Invoke the function, passing in the sampleString (above).
-*/
 
-//CODE HERE
+function makeUppercase(str) {
+  console.log(str.toUpperCase())
+}
+
+makeUppercase(sampleString)
+
+// Problem 18
+function emailCheck(email) {
+  email = String(email).trim()
+
+  if (email.includes('@')) {
+    return 'email verified'
+    // console.log('email verified')
+  } else {
+    return 'must provide a valid email address'
+    // console.log('must provide a valid email address')
+  }
+}
+emailCheck('test.gmail.com')
+
+// Problem 19
+function frogPurchaser(gold) {
+  return gold / 3
+  // console.log(gold / 3) 
+}
+
+let totalFrogs = frogPurchaser(100)
+
+// Problem 20
+function frogPurchaser2(gold) {
+  if (gold % 3 === 0) {
+    // console.log(gold / 3) 
+    return gold / 3
+  } else if ((gold - 1) % 3 === 0) {
+    // console.log((gold - 1) / 3) 
+    return (gold - 1) / 3
+  } else {
+    // console.log((gold - 2) / 3) 
+    return (gold - 2) / 3
+  }
+}
+
+let totalFrogs2 = frogPurchaser2(100)
 
 
-////////////////// PROBLEM 18 ////////////////////
-/*
-  Write a function called emailCheck that takes in
-  one parameter - email.
-  Inside the function, convert the email param into 
-  a string and trim off any excess whitespace.
-  Check to make sure the email contains an '@' symbol.
-  If it does, return 'email verified' and if doesn't, 
-  return 'must provide a valid email address'
-*/
-
-////////////////// PROBLEM 19 ////////////////////
-/*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
-  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 20 ////////////////////
-/*
-  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 21 ////////////////////
+// Problem 21
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
-/*
-  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
-*/
 
-//CODE HERE
+function checkArrayAscending(arr) {
+  let comparisonValue = arr[0]
+  for (let i = 1; i < arr.length - 1; i++) {
+    if (arr[i] <= comparisonValue) {
+      return false
+      // console.log('false')
+    } else {
+      comparisonValue = arr[i]
+    }
+  }
+  return true
+  // console.log('true')
+}
+
+let arrayIsAscending = checkArrayAscending(sampleArray)
 
 
-////////////////// PROBLEM 22 ////////////////////
-
+// Problem 22
 let duck = "cute";
 
 function bathroom() {
@@ -217,20 +243,14 @@ function pond() {
   let realDuck = "fluffy";
 }
 
-/*
-  There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
-  All within different scopes.
-  Given the functions and variables above, edit the arrays below to contain only the appropriate variable names (as strings).
-*/
-
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["duck", "rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["duck", "sailorDuck", "rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["duck", "realDuck"]
