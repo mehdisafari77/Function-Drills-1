@@ -183,7 +183,9 @@ function emailCheck(email) {
     // console.log('must provide a valid email address')
   }
 }
-emailCheck('test.gmail.com')
+
+// console.log(emailCheck('test.gmail.com'))
+
 
 // Problem 19
 function frogPurchaser(gold) {
